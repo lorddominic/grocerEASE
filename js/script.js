@@ -6,8 +6,30 @@ let $div = ('<div>')
 var ing = []
 var meas = []
 
-searchIcon.on('click', function (e) {
-    let ingredient = $('.uk-search-input').val()
+
+$("#recipe-form").on("submit", function (event) {
+    event.preventDefault();
+    console.log("search enter hit")
+   
+    let ingredient = $("#search-input").val().trim();
+    console.log(ingredient);
+
+
+    ingredientSearch(ingredient);
+
+
+});
+
+searchIcon.on('click', function () {
+    let ingredient = $('.uk-search-input').val().trim();
+    ingredientSearch(ingredient);
+
+});
+
+
+function ingredientSearch(ingredient) {
+    console.log("ingredientSearch running");
+    // let ingredient = $('.uk-search-input').val()
     let queryUrl = "https://www.themealdb.com/api/json/v2/9973533/filter.php?i=" + ingredient
     console.log(ingredient)
     $.ajax({
@@ -19,6 +41,7 @@ searchIcon.on('click', function (e) {
         
 
         for (let i = 0; i < 5; i++) {
+
             
            let meal = response.meals[i].strMeal
            let mealThumb = response.meals[i].strMealThumb
@@ -57,6 +80,6 @@ searchIcon.on('click', function (e) {
         })
 
 
-    })
+    });
 
-})
+}
