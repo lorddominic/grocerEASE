@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.2/dist/css/uikit.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>grocerEASE</title>
 </head>
+
 <body>
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left"><span uk-icon="icon: home"></div>
+        <div class="uk-navbar-right"><span uk-icon="icon: cart"></span></div>
+    </nav>
     
+    <div class="uk-container">
+          <div class="uk-flex uk-flex-center">
+                <form class="uk-search uk-search-default uk-padding">      
+                    <input class="uk-search-input" type="search" placeholder="Search...">
+                    <span class='uk-search-icon' uk-search-icon></span>  
+                </form>
+            </div>
+            <div class="uk-container uk-flex-center uk-flex">
+                <button class="uk-button uk-button-default" id='searchButton'>Search</button>
+            </div>
+            <h1 class='fancy uk-flex uk-flex-center' style='margin:1.5em;'>Search for your favorite ingredients</h1>
+            <div class="cardContainer uk-grid-small uk-child-width-expand@s" uk-grid></div>
+
+
+    
+    </div>
 </body>
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.2/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.2/dist/js/uikit-icons.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="./js/script.js"></script>
+
 </html>
