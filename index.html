@@ -11,15 +11,22 @@
 </head>
 
 <body>
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left"><span uk-icon="icon: home"></div>
+        <div class="uk-navbar-right"><span uk-icon="icon: cart"></span></div>
+    </nav>
+    
     <div class="uk-container">
           <div class="uk-flex uk-flex-center">
                 <form class="uk-search uk-search-default uk-padding">      
                     <input class="uk-search-input" type="search" placeholder="Search...">
                     <span class='uk-search-icon' uk-search-icon></span>  
                 </form>
-                <button class="uk-button uk-button-default" id='searchButton'> Star Search</button>
             </div>
-            <h1 class='fancy uk-flex uk-flex-center' style='margin:0;'>Search for your favorite ingredients</h1>
+            <div class="uk-container uk-flex-center uk-flex">
+                <button class="uk-button uk-button-default" id='searchButton'>Search</button>
+            </div>
+            <h1 class='fancy uk-flex uk-flex-center' style='margin:1.5em;'>Search for your favorite ingredients</h1>
             <div class="cardContainer uk-grid-small uk-child-width-expand@s" uk-grid></div>
 
 
