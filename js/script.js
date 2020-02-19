@@ -13,7 +13,7 @@ searchIcon.on('click', function (e) {
         method: "GET",
         url: queryUrl
     }).then(function (response) {
-
+        $('cardContainer').empty();
         for (let i = 0; i < 5; i++) {
             
            let meal = response.meals[i].strMeal
@@ -29,8 +29,6 @@ searchIcon.on('click', function (e) {
            mediaCard.append(imageCard)
            cardDiv.append(cardBody)
            cardBody.append(h3)
-
-           
         }
 
         console.log(queryUrl)

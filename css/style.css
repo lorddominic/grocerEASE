@@ -1,3 +1,21 @@
 .fancy {
     font-family: 'Fredoka One', cursive;
 }
+
+.uk-column{
+    width: 40%;
+}
+
+.uk-grid{
+    margin: 20px;
+}
+
+.container {
+    grid-template-columns: [first] 40% [col2-start] 40% [end];
+}
+
+.listColumn{
+    position: relative;
+    left: 240px;
+    width: auto;
+}
