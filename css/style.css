@@ -2,6 +2,31 @@
     font-family: 'Fredoka One', cursive;
 }
 
+
+#result {
+    background-color: darkmagenta;
+    color: darkmagenta;
+    text-align: left;
+    padding: 10%;
+}
+
+#result2 {
+    background-color: darkorange;
+    color: pink;
+    text-align: left;
+    padding: 10%;
+}
+
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+  .card {
+    display: inline-block;
+  }
+
 .uk-column{
     width: 40%;
 }
@@ -29,3 +54,4 @@
 #recipes{
     text-align: center;
 }
+
