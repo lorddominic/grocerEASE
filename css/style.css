@@ -1,3 +1,31 @@
 .fancy {
     font-family: 'Fredoka One', cursive;
 }
+
+.uk-column{
+    width: 40%;
+}
+
+.uk-grid{
+    margin: auto;
+        margin-top: 50px;
+}
+
+.container {
+    grid-template-columns: [first] 40% [col2-start] 40% [end];
+    margin: auto;
+}
+
+.listColumn{
+    position: relative;
+    left: 240px;
+    width: auto;
+}
+
+.marginAuto
+    margin: auto;
+}
+
+#recipes{
+    text-align: center;
+}

@@ -36,9 +36,12 @@ function ingredientSearch(ingredient) {
         method: "GET",
         url: queryUrl
     }).then(function (response) {
-        $('.cardContainer').empty()
+
+        $('cardContainer').empty();
+
 
         
+
 
         for (let i = 0; i < 5; i++) {
 
@@ -56,9 +59,10 @@ function ingredientSearch(ingredient) {
            mediaCard.append(imageCard)
            cardDiv.append(cardBody)
            cardBody.append(h3)
+
            queryUrl2 = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMeal
            console.log(queryUrl2)
-          
+
         }
         $.ajax({
             method: "GET",
