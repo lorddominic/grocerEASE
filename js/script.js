@@ -7,7 +7,7 @@ let $div = ('<div>')
 $("#recipe-form").on("submit", function (event) {
     event.preventDefault();
     console.log("search enter hit")
-   
+
     let ingredient = $("#search-input").val().trim();
     console.log(ingredient);
 
@@ -32,9 +32,15 @@ function ingredientSearch(ingredient) {
         method: "GET",
         url: queryUrl
     }).then(function (response) {
-
-        for (let i = 0; i < 5; i++) {
-
+        console.log(response)
+        if(!response.meals){
+            $('#error').html("I can't find that shit,trying something else!");
+            return;
+        }
+        $('#error').empty();
+        $(".cardContainer").empty();
+        for (let i = 0; i < response.meals.length; i++) {
+            
             let meal = response.meals[i].strMeal
             let mealThumb = response.meals[i].strMealThumb
             let idMeal = response.meals[i].idMeal
@@ -49,9 +55,6 @@ function ingredientSearch(ingredient) {
             cardDiv.append(cardBody)
             cardBody.append(h3)
         }
-
-        console.log(queryUrl)
-
-    });
-
-}
+    
+    })
+};
