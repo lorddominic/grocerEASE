@@ -7,39 +7,11 @@ var ing = []
 var meas = []
 var searchHistory = [];
 
-function goBack() {
-    ingredientSearch("Holycow");
-}
-
-function getHistory() {
-    $(".historyli").empty();
-    var parseHistory = JSON.parse(localStorage.getItem("history"));
-    parseHistory.forEach(element => {
-        var li = $("<li>").text(element)
-        $(".historyli").append(li);
-    })
-}
-
-$('.multiple-items').on('click', function(e) {
-    alert(this.attr())
-})
-
-$("#recipe-form").on("submit", function(event) {
-    event.preventDefault();
-    console.log("search enter hit")
-    let ingredient = $("#search-input").val().trim();
-    console.log(ingredient);
-    ingredientSearch(ingredient);
-});
-searchIcon.on('click', function() {
-    let ingredient = $('#search-input').val().trim();
-    console.log(ingredient)
-    ingredientSearch(ingredient);
-    event.preventDefault();
-    console.log(searchHistory);
-    searchHistory.push(ingredient);
-    localStorage.setItem("history", JSON.stringify(searchHistory));
-    getHistory();
+ingredientSearch(ingredient);
+event.preventDefault();
+console.log(searchHistory);
+searchHistory.push(ingredient);
+localStorage.setItem("history", JSON.stringify(searchHistory));
 });
 
 function ingredientSearch(ingredient) {
@@ -57,6 +29,12 @@ function ingredientSearch(ingredient) {
             let mealThumb = response.meals[i].strMealThumb
             let idMeal = response.meals[i].idMeal
             let imageCard = $('<img>').attr('src', mealThumb).attr('data-id', idMeal)
+
+
+            let meal = response.meals[i].strMeal
+            let mealThumb = response.meals[i].strMealThumb
+            let idMeal = response.meals[i].idMeal
+            let imageCard = $('<img>').attr('src', mealThumb).attr('data-id', idMeal).addClass('recipeImage')
 
             var sliderItem = $('<div>').append(imageCard)
             $('.multiple-items').append(sliderItem)
