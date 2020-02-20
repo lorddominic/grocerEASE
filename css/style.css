@@ -1,3 +1,57 @@
 .fancy {
     font-family: 'Fredoka One', cursive;
 }
+
+
+#result {
+    background-color: darkmagenta;
+    color: darkmagenta;
+    text-align: left;
+    padding: 10%;
+}
+
+#result2 {
+    background-color: darkorange;
+    color: pink;
+    text-align: left;
+    padding: 10%;
+}
+
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+  .card {
+    display: inline-block;
+  }
+
+.uk-column{
+    width: 40%;
+}
+
+.uk-grid{
+    margin: auto;
+        margin-top: 50px;
+}
+
+.container {
+    grid-template-columns: [first] 40% [col2-start] 40% [end];
+    margin: auto;
+}
+
+.listColumn{
+    position: relative;
+    left: 240px;
+    width: auto;
+}
+
+.marginAuto{
+    margin: auto;
+}
+
+#recipes{
+    text-align: center;
+}
+
