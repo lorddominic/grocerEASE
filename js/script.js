@@ -51,7 +51,7 @@ function ingredientSearch(ingredient) {
             
            let meal = response.meals[i].strMeal
            let mealThumb = response.meals[i].strMealThumb
-        //    let idMeal = response.meals[i].idMeal
+           let idMeal = response.meals[i].idMeal
            let cardDiv = $("<div>").addClass('uk-card uk-card-default')
            let mediaCard = $("<div>").addClass('uk-card-media-top')
            let cardBody = $("<div>").addClass('uk-card-body')
@@ -72,6 +72,7 @@ function ingredientSearch(ingredient) {
            console.log(queryUrl2)
 
         }
+    }
         $.ajax({
             method: "GET",
             url: queryUrl2
