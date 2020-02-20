@@ -38,7 +38,7 @@
 
 .container {
     grid-template-columns: [first] 40% [col2-start] 40% [end];
-    margin: auto;
+   
 }
 
 .listColumn{
@@ -55,3 +55,25 @@
     text-align: center;
 }
 
+.floatRight{
+float: right;
+}
+
+#image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
+#searchButton{
+    margin-bottom: 35px;
+}
+
+.hide {
+    display: none;
+ }
+ 
+ .uk-search{
+    margin-top: -55px;
+ }

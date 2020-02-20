@@ -15,8 +15,11 @@
         <div class="uk-navbar-left"><span uk-icon="icon: home"></div>
         <div class="uk-navbar-right"><span uk-icon="icon: cart"></span></div>
     </nav>
-
+<div>
+    <img id="image"src="https://files.slack.com/files-pri/TSVUEBSJY-FU81T35CY/ae21e51f-c19d-46b5-87b9-8697ddc5cee9_200x200.png" alt="grocerEASE">
+</div>
     <div class="uk-container">
+        <h1 class='fancy uk-flex uk-flex-center' style='margin:1.5em;'>Search for your favorite ingredients</h1>
           <div class="uk-flex uk-flex-center">
                 <form id="recipe-form" class="uk-search uk-search-default uk-padding">      
                     <input id="search-input" class="uk-search-input" type='text' placeholder="Search...">
@@ -26,14 +29,13 @@
             <div class="uk-container uk-flex-center uk-flex">
                 <button class="uk-button uk-button-default" id='searchButton'>Search</button>
             </div>
-            <h1 class='fancy uk-flex uk-flex-center' style='margin:1.5em;'>Search for your favorite ingredients</h1>
             <div id="result">
             <div class="cardContainer uk-grid-small uk-child-width-expand@s" uk-grid id="result2"></div>
         </div>
 
-    <div class="container">
+    <div class="container uk-width-1-2">
         <div uk-grid>
-            <div class="uk-column" style="
+            <div class="uk-width-1-2 uk-column" style="
             position: relative;
             left: 85px;"
             >
@@ -52,7 +54,7 @@
             </div>
             
 
-                    <ol class="uk-column uk-list uk-list-large uk-list-divider listColumn">
+                    <ol class="uk-width-1-2 uk-column uk-list uk-list-large uk-list-divider listColumn floatRight">
                         <li>List item 1</li>
                         <li>List item 2</li>
                         <li>List item 3</li>
