@@ -9,9 +9,10 @@ var ing = []
 var meas = []
 
 $('.multiple-items').on('click', function(e) {
-
     
-    alert(this.attr())
+    
+   alert($(event.target).attr('data-id'))
+//    .children().children().children().children().children().children())
 })
 
 $("#recipe-form").on("submit", function (event) {
@@ -57,7 +58,7 @@ function ingredientSearch(ingredient) {
            let meal = response.meals[i].strMeal
            let mealThumb = response.meals[i].strMealThumb
            let idMeal = response.meals[i].idMeal
-           let imageCard = $('<img>').attr('src', mealThumb).attr('data-id', idMeal)
+           let imageCard = $('<img>').attr('src', mealThumb).attr('data-id', idMeal).addClass('recipeImage')
     
             var sliderItem = $('<div>').append(imageCard)
            $('.multiple-items').append(sliderItem)
