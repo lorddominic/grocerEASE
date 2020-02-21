@@ -11,6 +11,12 @@ $("#home").on('click', function() {
     ingredientSearch("holyshit");
 })
 
+getLocal();
+
+function getLocal() {
+    searchHistory = JSON.parse(localStorage.getItem("history"));
+}
+
 function getHistory() {
     $(".historyli").empty();
     var parseHistory = JSON.parse(localStorage.getItem("history"));
@@ -24,12 +30,12 @@ function getHistory() {
 
 
 $('.multiple-items').on('click', function(e) {
-    
-    
-  recipes.push(($(event.target).attr('data-id')))
-  console.log(recipes)
-  
-  $(event.target).addClass('uk-invisible')
+
+
+    recipes.push(($(event.target).attr('data-id')))
+    console.log(recipes)
+
+    $(event.target).addClass('uk-invisible')
 
 
 
@@ -52,7 +58,7 @@ $("#recipe-form").on("submit", function(event) {
 });
 
 
-searchIcon.on('click', function () {
+searchIcon.on('click', function() {
     let ingredient = $('.uk-search-input').val().trim();
 
 
@@ -75,20 +81,20 @@ function ingredientSearch(ingredient) {
     }).then(function(response) {
         $('.multiple-items').empty()
         for (let i = 0; i < 5; i++) {
-    
 
 
-            
-           let meal = response.meals[i].strMeal
-           let mealThumb = response.meals[i].strMealThumb
-           let idMeal = response.meals[i].idMeal
-           let imageCard = $('<img>').attr('src', mealThumb).attr('data-id', idMeal).addClass('recipeImage')
-    
+
+
+            let meal = response.meals[i].strMeal
+            let mealThumb = response.meals[i].strMealThumb
+            let idMeal = response.meals[i].idMeal
+            let imageCard = $('<img>').attr('src', mealThumb).attr('data-id', idMeal).addClass('recipeImage')
+
             var sliderItem = $('<div>').append(imageCard)
-            var sliderText= sliderItem.append('<p>' + meal + '</p>')
+            var sliderText = sliderItem.append('<p>' + meal + '</p>')
             sliderText.addClass('uk-text-center uk-text-bold uk-text-large')
-           $('.multiple-items').append(sliderItem)
-           
+            $('.multiple-items').append(sliderItem)
+
 
 
 
@@ -105,7 +111,7 @@ function ingredientSearch(ingredient) {
             method: "GET",
             url: queryUrl2
 
-        }).then(function (response2) {
+        }).then(function(response2) {
 
             console.log(response2);
             for (let i = 1; i < 20; i++) {
@@ -135,5 +141,3 @@ function ingredientSearch(ingredient) {
     });
 
 }
-
-
