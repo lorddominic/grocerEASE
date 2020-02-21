@@ -7,6 +7,9 @@ var ing = []
 var meas = []
 var recipes = []
 var searchHistory = [];
+var ing = []
+var meas = []
+var ingmeas = [] 
 $("#home").on('click', function() {
     ingredientSearch("holyshit");
 })
@@ -20,6 +23,49 @@ function getHistory() {
     })
 }
 
+$('#generateShop').on('click', function (e) {
+
+    $('.ingredientsContainer').append("<h3 class='uk-text-center uk-padding'>" + 'Your combined shopping list:' + '</h3>' + '<hr>')
+
+for (let i = 0; i < recipes.length; i++) {
+   
+    
+
+   
+    var ingredientsUrl = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=" + recipes[i]
+    console.log(ingredientsUrl)
+
+    $.ajax({
+        method: "GET",
+        url: ingredientsUrl
+    }).then(function(response2) {
+        for (let i = 1; i < 20; i++) {
+        if (response2.meals[0]['strIngredient' + i] != '') {
+        
+        
+        
+        
+        ing.push(response2.meals[0]['strIngredient' + i])
+        meas.push(response2.meals[0]['strMeasure' + i])
+        
+        
+        ingmeas.push([response2.meals[0]['strIngredient' + i], response2.meals[0]['strMeasure' + i]])
+        var ingtest = ingmeas.sort()
+        console.log(ingtest)
+        // console.log(ingmeas)
+        // var shoots = $('<p>').text(ingmeas)
+        // $('.ingredientsContainer').append(shoots)
+            }
+        }
+     
+       console.log(ingmeas)
+
+        
+    })
+    
+}
+})
+
 
 
 
@@ -27,9 +73,14 @@ $('.multiple-items').on('click', function(e) {
     
     
   recipes.push(($(event.target).attr('data-id')))
-  console.log(recipes)
   
-  $(event.target).addClass('uk-invisible')
+  
+//   $(event.target).addClass('uk-invisible')
+  $('.underTitle').append(($(event.target)).parent())
+//   $('.underTitle').append(($(event.target)))
+  
+  $('.underTitle').children().attr('style', '')
+  $('.underTitle').children().addClass('fart')
 
 
 
@@ -38,14 +89,14 @@ $('.multiple-items').on('click', function(e) {
 
 $("#recipe-form").on("submit", function(event) {
     event.preventDefault();
-    console.log("search enter hit")
+    
 
     let ingredient = $("#search-input").val().trim();
-    console.log(ingredient);
+    
 
     ingredientSearch(ingredient);
     event.preventDefault();
-    console.log(searchHistory);
+    
     searchHistory.push(ingredient);
     localStorage.setItem("history", JSON.stringify(searchHistory));
     getHistory();
@@ -58,17 +109,17 @@ searchIcon.on('click', function () {
 
     ingredientSearch(ingredient);
     event.preventDefault();
-    console.log(searchHistory);
+   
     searchHistory.push(ingredient);
     localStorage.setItem("history", JSON.stringify(searchHistory));
     getHistory();
 });
 
 function ingredientSearch(ingredient) {
-    console.log("ingredientSearch running");
+   
     // let ingredient = $('.uk-search-input').val()
     let queryUrl = "https://www.themealdb.com/api/json/v2/9973533/filter.php?i=" + ingredient
-        // console.log(ingredient)
+       
     $.ajax({
         method: "GET",
         url: queryUrl
@@ -93,36 +144,15 @@ function ingredientSearch(ingredient) {
 
 
 
-            queryUrl2 = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMeal
-            console.log(queryUrl2)
+            
+           
 
 
-            queryUrl2 = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMeal
-            console.log(queryUrl2)
+            
+            
         }
 
-        $.ajax({
-            method: "GET",
-            url: queryUrl2
-
-        }).then(function (response2) {
-
-            console.log(response2);
-            for (let i = 1; i < 20; i++) {
-                if (response2.meals[0]['strIngredient' + i] != null) {
-                    ing.push(response2.meals[0]['strIngredient' + i])
-                    meas.push(response2.meals[0]['strMeasure' + i])
-                    console.log(ing)
-                    console.log(meas)
-                }
-
-
-            }
-
-
-
-
-        })
+    
 
         $('.multiple-items').slick({
             infinite: true,
