@@ -6,10 +6,9 @@ let $div = ('<div>')
 var ing = []
 var meas = []
 var searchHistory = [];
-
-function goBack() {
-    ingredientSearch("Holycow");
-}
+$("#home").on('click', function() {
+    ingredientSearch("holyshit");
+})
 
 function getHistory() {
     $(".historyli").empty();
