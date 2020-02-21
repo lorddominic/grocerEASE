@@ -75,10 +75,7 @@ function ingredientSearch(ingredient) {
     }).then(function(response) {
         $('.multiple-items').empty()
         for (let i = 0; i < 5; i++) {
-            let meal = response.meals[i].strMeal
-            let mealThumb = response.meals[i].strMealThumb
-            let idMeal = response.meals[i].idMeal
-            let imageCard = $('<img>').attr('src', mealThumb).attr('data-id', idMeal)
+    
 
 
             
