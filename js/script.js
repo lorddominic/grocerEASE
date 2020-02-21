@@ -5,6 +5,7 @@ let searchIcon = $('#searchButton')
 let $div = ('<div>')
 var ing = []
 var meas = []
+var recipes = []
 var searchHistory = [];
 $("#home").on('click', function() {
     ingredientSearch("holyshit");
@@ -19,15 +20,29 @@ function getHistory() {
     })
 }
 
+
+
+
 $('.multiple-items').on('click', function(e) {
-    alert(this.attr())
+    
+    
+  recipes.push(($(event.target).attr('data-id')))
+  console.log(recipes)
+  
+  $(event.target).addClass('uk-invisible')
+
+
+
+
 })
 
 $("#recipe-form").on("submit", function(event) {
     event.preventDefault();
     console.log("search enter hit")
+
     let ingredient = $("#search-input").val().trim();
     console.log(ingredient);
+
     ingredientSearch(ingredient);
     event.preventDefault();
     console.log(searchHistory);
@@ -35,9 +50,12 @@ $("#recipe-form").on("submit", function(event) {
     localStorage.setItem("history", JSON.stringify(searchHistory));
     getHistory();
 });
-searchIcon.on('click', function() {
-    let ingredient = $('#search-input').val().trim();
-    console.log(ingredient)
+
+
+searchIcon.on('click', function () {
+    let ingredient = $('.uk-search-input').val().trim();
+
+
     ingredientSearch(ingredient);
     event.preventDefault();
     console.log(searchHistory);
@@ -62,8 +80,25 @@ function ingredientSearch(ingredient) {
             let idMeal = response.meals[i].idMeal
             let imageCard = $('<img>').attr('src', mealThumb).attr('data-id', idMeal)
 
+
+            
+           let meal = response.meals[i].strMeal
+           let mealThumb = response.meals[i].strMealThumb
+           let idMeal = response.meals[i].idMeal
+           let imageCard = $('<img>').attr('src', mealThumb).attr('data-id', idMeal).addClass('recipeImage')
+    
             var sliderItem = $('<div>').append(imageCard)
-            $('.multiple-items').append(sliderItem)
+            var sliderText= sliderItem.append('<p>' + meal + '</p>')
+            sliderText.addClass('uk-text-center uk-text-bold uk-text-large')
+           $('.multiple-items').append(sliderItem)
+           
+
+
+
+
+            queryUrl2 = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMeal
+            console.log(queryUrl2)
+
 
             queryUrl2 = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMeal
             console.log(queryUrl2)
@@ -72,7 +107,9 @@ function ingredientSearch(ingredient) {
         $.ajax({
             method: "GET",
             url: queryUrl2
-        }).then(function(response2) {
+
+        }).then(function (response2) {
+
             console.log(response2);
             for (let i = 1; i < 20; i++) {
                 if (response2.meals[0]['strIngredient' + i] != null) {
@@ -81,7 +118,13 @@ function ingredientSearch(ingredient) {
                     console.log(ing)
                     console.log(meas)
                 }
+
+
             }
+
+
+
+
         })
 
         $('.multiple-items').slick({
@@ -90,5 +133,10 @@ function ingredientSearch(ingredient) {
             slidesToScroll: 3,
             arrows: false,
         });
+
+
     });
+
 }
+
+
