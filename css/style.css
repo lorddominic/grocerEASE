@@ -55,3 +55,18 @@
     text-align: center;
 }
 
+img {
+    padding: .5%;
+    -webkit-box-shadow: -5px 2px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -5px 2px 5px 0px rgba(0,0,0,0.75);
+box-shadow: -5px 2px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 90%;
+}
+img:hover {
+    opacity: 50%;
+}
+
+.greyed {
+    
+    display: none;
+}
