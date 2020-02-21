@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.2/dist/css/uikit.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <title>grocerEASE</title>
 </head>
 
@@ -16,65 +16,78 @@
         <div class="uk-navbar-left"><span uk-icon="icon: home"></div>
         <div class="uk-navbar-right"><span uk-icon="icon: cart"></span></div>
     </nav>
-
+    <div>
+        <img id="image"
+            src="assets/logo.png"
+            alt="grocerEASE">
+    </div>
     <div class="uk-container">
-          <div class="uk-flex uk-flex-center">
-                <form id="recipe-form" class="uk-search uk-search-default uk-padding">      
-                    <input id="search-input" class="uk-search-input" type='text' placeholder="Search...">
-                    <span class='uk-search-icon' uk-search-icon></span>  
-                </form>
-            </div>
-            <div class="uk-container uk-flex-center uk-flex">
-                <button class="uk-button uk-button-default" id='searchButton'>Search</button>
-            </div>
-            <h1 class='fancy uk-flex uk-flex-center' style='margin:1.5em;'>Search for your favorite ingredients</h1>
+        <h1 class='fancy uk-flex uk-flex-center' style='margin:1.5em;'>Search for your favorite ingredients</h1>
+        <div class="uk-flex uk-flex-center">
+            <form id="recipe-form" class="uk-search uk-search-default uk-padding">
+                <input id="search-input" class="uk-search-input" type='text' placeholder="Search...">
+                <span class='uk-search-icon' uk-search-icon></span>
+            </form>
         </div>
-        <div class="multiple-items">
-            
-          </div>
-        
-<!-- 
+        <div class="uk-container uk-flex-center uk-flex">
+            <button class="uk-button uk-button-default" id='searchButton'>Search</button>
+        </div>
+    </div>
+    <div class="multiple-items">
+
+    </div>
+
+
     <div class="container">
         <div uk-grid>
-            <div class="uk-column" style="
+            <div class="uk-width-1-2 uk-column" style="
             position: relative;
-            left: 85px;"
-            >
-            
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil earum suscipit
+            left: 85px;">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil earum suscipit
                 voluptas voluptatibus incidunt
                 aliquam Lorem ipsum dolor sit amet consectetur adipisicing elit. A alias minus numquam? Atque eos
                 suscipit excepturi ut minus dolores et earum, optio expedita quam obcaecati rem voluptates quidem nam
                 laudantium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, ipsa repellendus officia nobis
                 animi saepe possimus commodi debitis illo aspernatur error expedita necessitatibus consequuntur quas,
-                deserunt quibusdam quisquam obcaecati ullam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil earum suscipit
+                deserunt quibusdam quisquam obcaecati ullam?Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Nihil earum suscipit
                 voluptas voluptatibus incidunt
                 aliquam Lorem ipsum dolor sit amet consectetur adipisicing elit. A alias minus numquam? Atque eos
                 suscipit excepturi ut minus dolores et earum, optio expedita quam obcaecati rem voluptates quidem nam
-                laudantium? Lorem ipsum dolor 
+                laudantium? Lorem ipsum dolor
             </div>
-            
 
-                    <ol class="uk-column uk-list uk-list-large uk-list-divider listColumn">
-                        <li>List item 1</li>
-                        <li>List item 2</li>
-                        <li>List item 3</li>
-                        <li>List item 4</li>
-                        <li>List item 5</li>
-                    </ol>
-                
-            </div> -->
-        <!-- </div>
-    </div> --> 
+            <div></div>
+            <ol class="uk-width-1-2 uk-column uk-list uk-list-large uk-list-divider listColumn floatRight">
+                <li>List item 1</li>
+                <li>List item 2</li>
+                <li>List item 3</li>
+                <li>List item 4</li>
+                <li>List item 5</li>
+            </ol>
 
-<!-- UIkit JS -->
+
+
+        </div>
+    </div>
+    </div>
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.2/dist/js/uikit-icons.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
 
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.2/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.2/dist/js/uikit-icons.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
    
+
     <script type="text/javascript" src="slick/slick.js"></script>
     <script src="./js/script.js"></script>
 </body>
+
 </html>
