@@ -55,6 +55,7 @@
     text-align: center;
 }
 
+
 .floatRight{
 float: right;
 }
@@ -78,7 +79,9 @@ float: right;
     margin-top: -55px;
  }
 
- img {
+
+img {
+
     padding: .5%;
     -webkit-box-shadow: -5px 2px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: -5px 2px 5px 0px rgba(0,0,0,0.75);
@@ -89,6 +92,11 @@ img:hover {
     opacity: 50%;
 }
 
+
 #image:hover{
     opacity: 100%;
+
+.greyed {
+    
+    display: none;
 }

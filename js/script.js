@@ -9,11 +9,17 @@ var ing = []
 var meas = []
 var recipes = []
 
-$('.multiple-items').on('click', function (e) {
 
-    var target = $(event.target).attr("data-id")
-    recipes.push(target);
-    console.log(recipes);
+$('.multiple-items').on('click', function(e) {
+    
+    
+  recipes.push(($(event.target).attr('data-id')))
+  console.log(recipes)
+  
+  $(event.target).addClass('uk-invisible')
+
+
+
 })
 
 $("#recipe-form").on("submit", function (event) {
@@ -57,14 +63,17 @@ function ingredientSearch(ingredient) {
         for (let i = 0; i < 5; i++) {
 
 
-            let meal = response.meals[i].strMeal
-            let mealThumb = response.meals[i].strMealThumb
-            let idMeal = response.meals[i].idMeal
-            let imageCard = $('<img>').attr('src', mealThumb).attr('data-id', idMeal)
-
+            
+           let meal = response.meals[i].strMeal
+           let mealThumb = response.meals[i].strMealThumb
+           let idMeal = response.meals[i].idMeal
+           let imageCard = $('<img>').attr('src', mealThumb).attr('data-id', idMeal).addClass('recipeImage')
+    
             var sliderItem = $('<div>').append(imageCard)
-            $('.multiple-items').append(sliderItem)
-
+            var sliderText= sliderItem.append('<p>' + meal + '</p>')
+            sliderText.addClass('uk-text-center uk-text-bold uk-text-large')
+           $('.multiple-items').append(sliderItem)
+           
 
 
 
