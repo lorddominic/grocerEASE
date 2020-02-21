@@ -25,14 +25,9 @@ function getHistory() {
 
 $('.multiple-items').on('click', function(e) {
     
-    
   recipes.push(($(event.target).attr('data-id')))
   console.log(recipes)
-  
   $(event.target).addClass('uk-invisible')
-
-
-
 
 })
 
