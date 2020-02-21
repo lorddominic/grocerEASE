@@ -65,3 +65,8 @@ box-shadow: -5px 2px 5px 0px rgba(0,0,0,0.75);
 img:hover {
     opacity: 50%;
 }
+
+.greyed {
+    
+    display: none;
+}
