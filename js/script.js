@@ -12,6 +12,8 @@ var meas = []
 var ingmeas = []
 var newMeas = []
 
+
+
 $("#home").on('click', function () {
     ingredientSearch("holyshit");
 })
@@ -42,6 +44,8 @@ $('#generateShop').on('click', function (e) {
                     ingmeas.push([response2.meals[0]['strIngredient' + i], response2.meals[0]['strMeasure' + i]])
                     ingmeas = ingmeas.sort()
                     
+                    
+                    
 
 
                 }
@@ -51,10 +55,26 @@ $('#generateShop').on('click', function (e) {
             }
             
     
-        })
+        })      
+        
     }
  
-
+     var promise = new Promise((resolve, reject) => {
+        setTimeout(() => {  
+            resolve() 
+        }, 2000);
+        
+    setTimeout(() => {
+        
+        stuffToDo(ingmeas)
+        console.log(newMeas)
+        
+        
+        
+    }, 2100); 
+        
+    
+    })
   
 })
 
@@ -63,24 +83,26 @@ $('#generateShop').on('click', function (e) {
 
 function stuffToDo(ingmeas) {
     console.log(newMeas)
+    for (let i = 0; i < ingmeas.length; i++) {
+        
+        debugger
+   
     if (ingmeas.length > 0) {
-        console.log(ingmeas)
-        if ((ingmeas[0][0]) === (ingmeas[1][0])) {
+        console.log(ingmeas[0][0])
+        if (ingmeas[0][0] === ingmeas[1][0]) {
             ingmeas[0].push(ingmeas[1][1])
             newMeas.push(ingmeas[0])
-            
-            ingmeas.splice(0)
-            ingmeas.splice(1)
-             console.log('nuggets')
+            ingmeas.shift()
+            ingmeas.shift()
         }
 
         else {
-            console.log('farts')
             newMeas.push(ingmeas[0])
             newMeas.push(ingmeas[1])
-            ingmeas.splice(0)
-            ingmeas.splice(1)
+            ingmeas.shift()
+            ingmeas.shift()
         }
+    }
     }
 }
 
