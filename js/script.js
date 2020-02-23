@@ -28,7 +28,7 @@ function getHistory() {
 }
 
 $('#generateShop').on('click', function (e) {
-    
+
     for (let i = 0; i < recipes.length; i++) {
         var ingredientsUrl = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=" + recipes[i]
         console.log(ingredientsUrl)
@@ -43,41 +43,41 @@ $('#generateShop').on('click', function (e) {
                     meas.push(response2.meals[0]['strMeasure' + i])
                     ingmeas.push([response2.meals[0]['strIngredient' + i], response2.meals[0]['strMeasure' + i]])
                     ingmeas = ingmeas.sort()
-                    
-                    
-                    
+
+
+
 
 
                 }
-               
-               
-                
+
+
+
             }
-            
-    
-        })      
-        
+
+
+        })
+
     }
- 
-     var promise = new Promise((resolve, reject) => {
-        setTimeout(() => {  
-            resolve() 
+
+    var promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve()
         }, 2000);
-        
-    setTimeout(() => {
-        
-        stuffToDo(ingmeas)
-        uniqueMeas = new Set(newMeas)
-        uniqueMeasArray = [...uniqueMeas]
-        displaySet(uniqueMeasArray)
-        
-        
-        
-    }, 2100); 
-        
-    
+
+        setTimeout(() => {
+
+            stuffToDo(ingmeas)
+            uniqueMeas = new Set(newMeas)
+            uniqueMeasArray = [...uniqueMeas]
+            displaySet(uniqueMeasArray)
+
+
+
+        }, 2100);
+
+
     })
-  
+
 })
 
 
@@ -91,10 +91,10 @@ function displaySet(setArray) {
         cardDiv.addClass('uk-card-secondary uk-card-body')
         cardDiv.append(h3)
         cardDiv.append(removeZero(element))
-      
+
         $('.uk-grid-recipes').append(div)
         $('.uk-grid-recipes').append(cardDiv)
-        
+
     });
 
 }
@@ -102,47 +102,47 @@ function displaySet(setArray) {
 function removeZero(array) {
     array.shift()
     liItemArray = []
-   array.forEach(element => {  
-         
+    array.forEach(element => {
+
         liItem = '<li>' + element + '</li>'
-         liItemArray.push(liItem)
-       
+        liItemArray.push(liItem)
+
     });
     return liItemArray
-   
-        
-    
+
+
+
 }
 
 function stuffToDo(ingmeas) {
     for (let i = 0; i < ingmeas.length; i++) {
-        
-        
-   
-    if (ingmeas.length > 0) {
-       
-        
-        if (ingmeas[0][0] === ingmeas[1][0]) {
-            ingmeas[0].push(ingmeas[1][1])
-            newMeas.push(ingmeas[0])
-            ingmeas.splice(1,1)
-            
-        }
 
-        // else if(ingmeas[0][0] === ingmeas[1][0] && newMeas[i + 1][0] === ingmeas[0][0]){
-        //     ingmeas[0].push(ingmeas[1][1])
-        //     newMeas.push(ingmeas[0])
-        //     ingmeas.shift()
-        //     ingmeas.shift()
-            
-        // }
 
-        else {
-            newMeas.push(ingmeas[0])
-            ingmeas.shift()
-           
+
+        if (ingmeas.length > 0) {
+
+
+            if (ingmeas[0][0] === ingmeas[1][0]) {
+                ingmeas[0].push(ingmeas[1][1])
+                newMeas.push(ingmeas[0])
+                ingmeas.splice(1, 1)
+
+            }
+
+            // else if(ingmeas[0][0] === ingmeas[1][0] && newMeas[i + 1][0] === ingmeas[0][0]){
+            //     ingmeas[0].push(ingmeas[1][1])
+            //     newMeas.push(ingmeas[0])
+            //     ingmeas.shift()
+            //     ingmeas.shift()
+
+            // }
+
+            else {
+                newMeas.push(ingmeas[0])
+                ingmeas.shift()
+
+            }
         }
-    }
     }
 }
 
