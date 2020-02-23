@@ -28,7 +28,7 @@ function getHistory() {
 }
 
 $('#generateShop').on('click', function (e) {
-    $('.ingredientsContainer').append("<h3 class='uk-text-center uk-padding'>" + 'Your combined shopping list:' + '</h3>' + '<hr>')
+    
     for (let i = 0; i < recipes.length; i++) {
         var ingredientsUrl = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=" + recipes[i]
         console.log(ingredientsUrl)
@@ -67,9 +67,9 @@ $('#generateShop').on('click', function (e) {
     setTimeout(() => {
         
         stuffToDo(ingmeas)
-        console.log(newMeas)
         uniqueMeas = new Set(newMeas)
-        console.log(uniqueMeas)
+        uniqueMeasArray = [...uniqueMeas]
+        displaySet(uniqueMeasArray)
         
         
         
@@ -81,7 +81,38 @@ $('#generateShop').on('click', function (e) {
 })
 
 
+function displaySet(setArray) {
+    setArray.forEach(element => {
+        var div = $('<div>')
+        var cardDiv = $('<div>')
+        var h3 = $('<h3>')
+        h3.addClass('uk-card-title')
+        h3.text(element[0])
+        cardDiv.addClass('uk-card-secondary uk-card-body')
+        cardDiv.append(h3)
+        cardDiv.append(removeZero(element))
+      
+        $('.uk-grid-recipes').append(div)
+        $('.uk-grid-recipes').append(cardDiv)
+        
+    });
 
+}
+
+function removeZero(array) {
+    array.shift()
+    liItemArray = []
+   array.forEach(element => {  
+         
+        liItem = '<li>' + element + '</li>'
+         liItemArray.push(liItem)
+       
+    });
+    return liItemArray
+   
+        
+    
+}
 
 function stuffToDo(ingmeas) {
     for (let i = 0; i < ingmeas.length; i++) {
