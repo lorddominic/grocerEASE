@@ -68,6 +68,8 @@ $('#generateShop').on('click', function (e) {
         
         stuffToDo(ingmeas)
         console.log(newMeas)
+        uniqueMeas = new Set(newMeas)
+        console.log(uniqueMeas)
         
         
         
@@ -82,25 +84,32 @@ $('#generateShop').on('click', function (e) {
 
 
 function stuffToDo(ingmeas) {
-    console.log(newMeas)
     for (let i = 0; i < ingmeas.length; i++) {
         
-        debugger
+        
    
     if (ingmeas.length > 0) {
-        console.log(ingmeas[0][0])
+       
+        
         if (ingmeas[0][0] === ingmeas[1][0]) {
             ingmeas[0].push(ingmeas[1][1])
             newMeas.push(ingmeas[0])
-            ingmeas.shift()
-            ingmeas.shift()
+            ingmeas.splice(1,1)
+            
         }
+
+        // else if(ingmeas[0][0] === ingmeas[1][0] && newMeas[i + 1][0] === ingmeas[0][0]){
+        //     ingmeas[0].push(ingmeas[1][1])
+        //     newMeas.push(ingmeas[0])
+        //     ingmeas.shift()
+        //     ingmeas.shift()
+            
+        // }
 
         else {
             newMeas.push(ingmeas[0])
-            newMeas.push(ingmeas[1])
             ingmeas.shift()
-            ingmeas.shift()
+           
         }
     }
     }
