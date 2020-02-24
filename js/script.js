@@ -91,6 +91,7 @@ $('#generateShop').on('click', function (e) {
             uniqueMeas = new Set(newMeas)
             uniqueMeasArray = [...uniqueMeas]
             displaySet(uniqueMeasArray)
+            // saveToDrive()
         }, 2100)
 
 $('.multiple-items').on('click', function(e) {
@@ -219,7 +220,21 @@ $("#recipe-form").on("submit", function (event) {
     getHistory();
 });
 
+function saveToDrive() {
+    var googleDiv = $("<div>").attr('class', 'g-savetodrive')
+    .attr('data-src', '/example.com' )
+    .attr('data-filename', 'shoppinglist.pdf')
+    .attr('data-sitename', 'grocerEase')
+    $('.uk-grid-recipes').append(googleDiv)
 
+
+    //     <div class="g-savetodrive"
+//    data-src="//example.com/path/to/myfile.pdf"
+//    data-filename="My Statement.pdf"
+//    data-sitename="My Company Name">
+// </div>
+
+}
 
 searchIcon.on('click', function () {
 
