@@ -70,6 +70,7 @@ html, body {
 
 .search > div > input::-ms-input-placeholder {
   color: #efefef;
+}
 
 #result {
     background-color: darkmagenta;
@@ -143,6 +144,7 @@ html, body {
 
 #searchButton{
     margin-bottom: 5px;
+}
 
 
 .hide {
@@ -177,7 +179,7 @@ img:hover {
 }
 
 
-=======
+
 #image:hover {
     opacity: 100%;
 }

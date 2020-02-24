@@ -87,7 +87,11 @@ $('#generateShop').on('click', function (e) {
         }, 2000);
 
         setTimeout(() => {
-
+            stuffToDo(ingmeas)
+            uniqueMeas = new Set(newMeas)
+            uniqueMeasArray = [...uniqueMeas]
+            displaySet(uniqueMeasArray)
+        }, 2100)
 
 $('.multiple-items').on('click', function(e) {
 
@@ -97,10 +101,7 @@ $('.multiple-items').on('click', function(e) {
 
     $(event.target).addClass('uk-invisible')
 
-            stuffToDo(ingmeas)
-            uniqueMeas = new Set(newMeas)
-            uniqueMeasArray = [...uniqueMeas]
-            displaySet(uniqueMeasArray)
+            
 
 
 
