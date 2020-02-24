@@ -31,6 +31,10 @@ $('#generateShop').on('click', function (e) {
     // meal container slide away on ingredient generation-------------------------------------------------------------------------------------
 
     $("#mealContainer").toggle("uk-animation-reverse");
+    $(".ingredientsContainer").removeClass("hide");
+    $("#generateShop").toggle("uk-animation-reverse");
+
+    
     // meal container slide away on ingredient generation-------------------------------------------------------------------------------------
 
     for (let i = 0; i < recipes.length; i++) {
@@ -171,6 +175,7 @@ $('.multiple-items').on('click', function (e) {
 
     $('.underTitle').children().attr('style', '')
     $('.underTitle').children().addClass('fart')
+    // take away hide on recipe selectioni container--------------------------------------------------------
     $("#recipeContainer").removeClass("hide");
 
 
@@ -198,7 +203,7 @@ searchIcon.on('click', function () {
     $("#searchBar").toggle("uk-animation-reverse");
 
 
-    let ingredient = $('.uk-search-input').val().trim();
+    let ingredient = $('#search-input').val().trim();
 
 
     ingredientSearch(ingredient);
