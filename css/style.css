@@ -63,12 +63,20 @@ html, body {
   opacity: 1;
 }
 
+
 .search > div > input::-ms-placeholder {
   color: #efefef;
 }
 
 .search > div > input::-ms-input-placeholder {
   color: #efefef;
+
+#result {
+    background-color: darkmagenta;
+    color: darkmagenta;
+    text-align: left;
+    padding: 10%;
+
 }
 
 .search > div > input:focus,
@@ -88,75 +96,92 @@ html, body {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-  }
+}
 
-  .card {
+.card {
     display: inline-block;
-  }
+}
 
-.uk-column{
+.uk-column {
     width: 40%;
 }
 
-.uk-grid{
+.uk-grid {
     margin: auto;
-        margin-top: 50px;
+    margin-top: 50px;
 }
 
 .container {
     grid-template-columns: [first] 40% [col2-start] 40% [end];
-   
 }
 
-.listColumn{
+.listColumn {
     position: relative;
     left: 240px;
     width: auto;
 }
 
-.marginAuto{
+.marginAuto {
     margin: auto;
 }
 
-#recipes{
+#recipes {
     text-align: center;
 }
 
-
-.floatRight{
-float: right;
+.floatRight {
+    float: right;
 }
 
-#image{
+#image {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 25%;
 }
 
+
 #searchButton{
     margin-bottom: 5px;
-}
+
 
 .hide {
     display: none;
+
  }
  
  /* .uk-search{
     margin-top: -55px;
  } */
 
+.uk-search {
+    margin-top: -55px;
+}
 
 img {
     padding: .5%;
+
     -webkit-box-shadow: 0px 4px 5px 2px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 4px 5px 2px rgba(0,0,0,0.75);
     box-shadow: 0px 4px 5px 2px rgba(0,0,0,0.75);
+
+    -webkit-box-shadow: -5px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -5px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -5px 2px 5px 0px rgba(0, 0, 0, 0.75);
+
     border-radius: 90%;
 }
+
 img:hover {
     opacity: 50%;
 }
+
+
+=======
+#image:hover {
+    opacity: 100%;
+}
+
 
 
 .orange {
@@ -165,6 +190,7 @@ img:hover {
 
 .fart {
     width: 10%;
+
 }
 
 h1 {
@@ -231,4 +257,5 @@ text-align: center;
 
 #mealContainer {
   padding-top: 30%;
+
 }

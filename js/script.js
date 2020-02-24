@@ -18,6 +18,17 @@ $("#home").on('click', function () {
     ingredientSearch("holyshit");
 })
 
+getLocal();
+
+function getLocal() {
+    searchHistory = localStorage.getItem("history");
+    if (searchHistory) {
+        searchHistory = JSON.parse(localStorage.getItem(searchHistory))
+    } else {
+        searchHistory = [];
+    }
+}
+
 function getHistory() {
     $(".historyli").empty();
     var parseHistory = JSON.parse(localStorage.getItem("history"));
@@ -77,10 +88,20 @@ $('#generateShop').on('click', function (e) {
 
         setTimeout(() => {
 
+
+$('.multiple-items').on('click', function(e) {
+
+
+    recipes.push(($(event.target).attr('data-id')))
+    console.log(recipes)
+
+    $(event.target).addClass('uk-invisible')
+
             stuffToDo(ingmeas)
             uniqueMeas = new Set(newMeas)
             uniqueMeasArray = [...uniqueMeas]
             displaySet(uniqueMeasArray)
+
 
 
 
@@ -198,12 +219,15 @@ $("#recipe-form").on("submit", function (event) {
 });
 
 
+
 searchIcon.on('click', function () {
 
     $("#searchBar").toggle("uk-animation-reverse");
 
 
     let ingredient = $('#search-input').val().trim();
+
+
 
 
     ingredientSearch(ingredient);
@@ -229,6 +253,9 @@ function ingredientSearch(ingredient) {
 
 
 
+
+
+
             let meal = response.meals[i].strMeal
             let mealThumb = response.meals[i].strMealThumb
             let idMeal = response.meals[i].idMeal
@@ -243,6 +270,7 @@ function ingredientSearch(ingredient) {
 
 
 
+
         $('.multiple-items').slick({
             infinite: true,
             slidesToShow: 3,
@@ -254,5 +282,3 @@ function ingredientSearch(ingredient) {
     });
 
 }
-
-
