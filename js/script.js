@@ -14,7 +14,12 @@ $("#home").on('click', function() {
 getLocal();
 
 function getLocal() {
-    searchHistory = JSON.parse(localStorage.getItem("history"));
+    searchHistory = localStorage.getItem("history");
+    if (searchHistory) {
+        searchHistory = JSON.parse(localStorage.getItem(searchHistory))
+    } else {
+        searchHistory = [];
+    }
 }
 
 function getHistory() {
