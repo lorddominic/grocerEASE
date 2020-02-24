@@ -1,20 +1,96 @@
-.fancy {
-    font-family: 'Fredoka One', cursive;
+/* @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700"); */
+
+* {
+  padding: 0;
+  margin: 0;
 }
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.flexbox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  margin: 20px;
+}
+
+.search > h3 {
+  font-weight: normal;
+}
+
+
+.search > div {
+  display: inline-block;
+  position: relative;
+}
+
+.search > div:after {
+  content: "";
+  background: rgb(0, 0, 0);
+  width: 4px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  right: 2px;
+  transform: rotate(135deg);
+  box-shadow: 1px 0 #000000;
+}
+
+.search > div > input {
+  font-size: 16px;
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+  border: solid 3px #408c99;
+  outline: none;
+  border-radius: 35px;
+  box-shadow: 0 1px #0091c2;
+  transition: width 0.5s;
+}
+
+/* -------------------------fancy search bar */
+
+.search > div > input::placeholder {
+  color: #efefef;
+  opacity: 1;
+}
+
+
+.search > div > input::-ms-placeholder {
+  color: #efefef;
+}
+
+.search > div > input::-ms-input-placeholder {
+  color: #efefef;
 
 #result {
     background-color: darkmagenta;
     color: darkmagenta;
     text-align: left;
     padding: 10%;
+
 }
 
-#result2 {
-    background-color: darkorange;
-    color: pink;
-    text-align: left;
-    padding: 10%;
+.search > div > input:focus,
+.search > div > input:valid {
+  width: 250px;
 }
+
+
+
+.fancy {
+    font-family: 'Fredoka One', cursive;
+}
+
+
 
 .scrolling-wrapper {
     overflow-x: scroll;
@@ -64,13 +140,19 @@
     width: 25%;
 }
 
-#searchButton {
-    margin-bottom: 35px;
-}
+
+#searchButton{
+    margin-bottom: 5px;
+
 
 .hide {
     display: none;
-}
+
+ }
+ 
+ /* .uk-search{
+    margin-top: -55px;
+ } */
 
 .uk-search {
     margin-top: -55px;
@@ -78,9 +160,15 @@
 
 img {
     padding: .5%;
+
+    -webkit-box-shadow: 0px 4px 5px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 5px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 5px 2px rgba(0,0,0,0.75);
+
     -webkit-box-shadow: -5px 2px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: -5px 2px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: -5px 2px 5px 0px rgba(0, 0, 0, 0.75);
+
     border-radius: 90%;
 }
 
@@ -88,6 +176,8 @@ img:hover {
     opacity: 50%;
 }
 
+
+=======
 #image:hover {
     opacity: 100%;
 }
@@ -100,5 +190,72 @@ img:hover {
 
 .fart {
     width: 10%;
+
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Trade Winds';
+} 
+
+#ease {
+/* background: rgb(0, 56, 153) !important; */
+text-shadow: rgb(187, 210, 197) -5px 5px 0px, rgb(83, 105, 118) -10px 10px 0px, #536976 -15px 15px 0px;
+    color: #00416A;
+}
+
+#recipeContainer{
+    float: inline-start;
+}
+
+p{
+    font-size: small;
+}
+.searchThing {
+
+width: 100%;
+}
+
+
+
+.ingredientsContainer {
+    padding: 1%;
+    text-align: center;
+    float: left;
+}
+
+/* <a href="#" class="myButton">turquoise</a> */
+
+Button {
+  opacity: 80%;
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+Button:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+Button:active {
+	position:relative;
+	top:1px;
+}
+
+#recipe-form {
+text-align: center;
+}
+
+#mealContainer {
+  padding-top: 30%;
 
 }
