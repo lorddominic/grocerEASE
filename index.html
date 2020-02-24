@@ -5,21 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.2/dist/css/uikit.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Philosopher:400,700|Trade+Winds&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <title>grocerEASE</title>
 </head>
 
 <body>
     <nav class="uk-navbar-container" uk-navbar>
-        <div class="uk-navbar-left"><button uk-icon="icon: home" class="homeIcon" id="home">Go Back</button></div>
+        <div class="uk-navbar-left"><button uk-icon="icon: home" class="homeIcon" id="home" onClick="window.location.reload();"></button>
+        </div>
         <div class="uk-navbar-right"><a href="history.html"><button uk-icon="icon: cart" class="cartIcon" id="cart">Food Cart</button></a></div>
     </nav>
     <div>
-       <h1 class='uk-text-center'>grocerEASE</h1>
+       <h1 class='uk-text-center'>grocer <span id="ease">EASE</span></h1>
     </div>
-    <div class="uk-container">
+    <br>
+    <div class="uk-container uk-animation-slide-left" id="searchBar">
 
 
       
@@ -35,14 +37,14 @@
         <div class="uk-container uk-flex-center uk-flex">
             <button class="uk-button uk-button-default" id='searchButton'>Search</button>
         </div>
-        <h1 class='fancy uk-flex uk-flex-center' style='margin:1.5em;'>Search for your favorite ingredients</h1>
+        <h1 class='fancy uk-flex uk-flex-center' style='margin:1.5em;' id="tagLine">Search for your favorite ingredients</h1>
 
     </div>
-    <div class="multiple-items">
+    <div class="multiple-items uk-animation-slide-left" id="mealContainer">
 
     </div>
     
-    <div class="container uk-flex uk-flex-center uk-flex-column orange" id='recipeContainer'>
+    <div class="container uk-flex uk-flex-center uk-flex-column orange hide" id='recipeContainer'>
         
     <h3 class='uk-text-center fancy uk-padding-small'>Your Selected Recipes</h3>
         

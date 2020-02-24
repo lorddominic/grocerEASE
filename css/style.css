@@ -3,19 +3,6 @@
 }
 
 
-#result {
-    background-color: darkmagenta;
-    color: darkmagenta;
-    text-align: left;
-    padding: 10%;
-}
-
-#result2 {
-    background-color: darkorange;
-    color: pink;
-    text-align: left;
-    padding: 10%;
-}
 
 .scrolling-wrapper {
     overflow-x: scroll;
@@ -68,7 +55,7 @@ float: right;
 }
 
 #searchButton{
-    margin-bottom: 35px;
+    margin-bottom: 5px;
 }
 
 .hide {
@@ -83,9 +70,9 @@ float: right;
 img {
 
     padding: .5%;
-    -webkit-box-shadow: -5px 2px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: -5px 2px 5px 0px rgba(0,0,0,0.75);
-box-shadow: -5px 2px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 4px 5px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 5px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 5px 2px rgba(0,0,0,0.75);
     border-radius: 90%;
 }
 img:hover {
@@ -104,4 +91,18 @@ img:hover {
 
 .fart {
     width: 10%;
+}
+
+h1 {
+    font-family: 'Trade Winds';
+}
+
+#ease {
+/* background: rgb(0, 56, 153) !important; */
+text-shadow: rgb(187, 210, 197) -5px 5px 0px, rgb(83, 105, 118) -10px 10px 0px, #536976 -15px 15px 0px;
+    color: #00416A;
+}
+
+#recipeContainer{
+    float: inline-start;
 }

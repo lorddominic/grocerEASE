@@ -28,6 +28,10 @@ function getHistory() {
 }
 
 $('#generateShop').on('click', function (e) {
+    // meal container slide away on ingredient generation-------------------------------------------------------------------------------------
+
+    $("#mealContainer").toggle("uk-animation-reverse");
+    // meal container slide away on ingredient generation-------------------------------------------------------------------------------------
 
     for (let i = 0; i < recipes.length; i++) {
         var ingredientsUrl = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=" + recipes[i]
@@ -43,6 +47,7 @@ $('#generateShop').on('click', function (e) {
                     meas.push(response2.meals[0]['strMeasure' + i])
                     ingmeas.push([response2.meals[0]['strIngredient' + i], response2.meals[0]['strMeasure' + i]])
                     ingmeas = ingmeas.sort()
+                    
 
 
 
@@ -58,6 +63,8 @@ $('#generateShop').on('click', function (e) {
         })
 
     }
+
+
 
     var promise = new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -88,7 +95,7 @@ function displaySet(setArray) {
         var h3 = $('<h3>')
         h3.addClass('uk-card-title')
         h3.text(element[0])
-        cardDiv.addClass('uk-card-secondary uk-card-body')
+        cardDiv.addClass('uk-card-secondary uk-card-body uk-animation-slide-left')
         cardDiv.append(h3)
         cardDiv.append(removeZero(element))
 
@@ -164,7 +171,7 @@ $('.multiple-items').on('click', function (e) {
 
     $('.underTitle').children().attr('style', '')
     $('.underTitle').children().addClass('fart')
-
+    $("#recipeContainer").removeClass("hide");
 
 
 
@@ -187,6 +194,10 @@ $("#recipe-form").on("submit", function (event) {
 
 
 searchIcon.on('click', function () {
+
+    $("#searchBar").toggle("uk-animation-reverse");
+
+
     let ingredient = $('.uk-search-input').val().trim();
 
 
