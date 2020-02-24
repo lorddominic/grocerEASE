@@ -92,6 +92,13 @@ img:hover {
     opacity: 100%;
 }
 
-.greyed {
-    display: none;
+
+
+.orange {
+    background-color: orange;
+}
+
+.fart {
+    width: 10%;
+
 }
